@@ -4,10 +4,10 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python 3.8 (32-bit)
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.8'
         architecture: 'x86'
@@ -19,7 +19,7 @@ jobs:
       run: pyinstaller -F pixel_radar.py
       
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Radar-Tool-EXE
         path: dist/pixel_radar.exe
